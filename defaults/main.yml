@@ -1,0 +1,6 @@
+---
+java_online_install: false
+java_installer_path: /var/java
+java_version: jre1.7.0_55
+java_base_install_dir: /apps
+#java_dist_install: false

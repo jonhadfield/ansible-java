@@ -15,11 +15,10 @@
 
 # Offline Install
 - name: offline install | copy and extract java installation
-  unarchive: src={{ java_installer_path }}/{{ java_version }}.tar.gz dest={{ java_base_install_dir}}/ mode=0700 creates={{ java_base_install_dir}}/{{ java_version }}/bin/java
+  unarchive: src={{ java_installer_path }} dest={{ java_base_install_dir}}/ mode=0700 creates={{ java_base_install_dir}}/{{ java_version }}/bin/java
   when: not java_online_install
 
 # Prepare runtime
-
 - name: grant directory permissions to java user for installation directory
   file: path={{ java_base_install_dir}}/{{ java_version }} owner=root group=root mode=0755 recurse=true
 - name: create symlink to java installation
